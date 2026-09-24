@@ -1,0 +1,28 @@
+{
+  "total_records": 11994,
+  "fraud_count": 2951,
+  "legit_count": 9043,
+  "fraud_percentage": 24.6,
+  "average_total_claim": 22862.1,
+  "average_income": 63703.1,
+  "accident_site_stats": {
+    "Highway": 25.14,
+    "Local": 24.44,
+    "Parking Lot": 24.5
+  },
+  "vehicle_category_stats": {
+    "Compact": 24.52,
+    "Large": 24.27,
+    "Medium": 25.03
+  },
+  "form_defects_stats": {
+    "0": 21.49,
+    "1": 25.67,
+    "2": 24.08,
+    "3": 25.33,
+    "4": 25.02,
+    "5": 25.09,
+    "6": 23.73,
+    "7": 21.43
+  }
+}

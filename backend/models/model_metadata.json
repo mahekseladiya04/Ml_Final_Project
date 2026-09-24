@@ -1,0 +1,114 @@
+{
+  "best_model": "Gradient Boosting",
+  "library": "scikit-learn",
+  "hyperparameters": {
+    "n_estimators": 150,
+    "learning_rate": 0.08,
+    "max_depth": 4,
+    "subsample": 0.85,
+    "criterion": "friedman_mse",
+    "min_samples_split": 2,
+    "min_samples_leaf": 1
+  },
+  "performance": {
+    "accuracy": 0.7841,
+    "precision": 0.8652,
+    "recall": 0.1321,
+    "f1_score": 0.2292,
+    "roc_auc": 0.6579
+  },
+  "benchmark": [
+    {
+      "model": "Logistic Regression",
+      "accuracy": 0.7807,
+      "precision": 0.8132,
+      "recall": 0.1269,
+      "f1_score": 0.2196,
+      "roc_auc": 0.6473
+    },
+    {
+      "model": "Decision Tree",
+      "accuracy": 0.7866,
+      "precision": 0.8817,
+      "recall": 0.1407,
+      "f1_score": 0.2426,
+      "roc_auc": 0.6373
+    },
+    {
+      "model": "Random Forest",
+      "accuracy": 0.7841,
+      "precision": 0.9221,
+      "recall": 0.1218,
+      "f1_score": 0.2152,
+      "roc_auc": 0.6476
+    },
+    {
+      "model": "Gradient Boosting",
+      "accuracy": 0.7841,
+      "precision": 0.8652,
+      "recall": 0.1321,
+      "f1_score": 0.2292,
+      "roc_auc": 0.6579
+    },
+    {
+      "model": "Scratch Logistic Reg (First Principles)",
+      "accuracy": 0.7807,
+      "precision": 0.8276,
+      "recall": 0.1235,
+      "f1_score": 0.2149,
+      "roc_auc": 0.6437
+    }
+  ],
+  "top_features": [
+    {
+      "feature": "annual_income",
+      "importance": 0.4766,
+      "percentage": 47.7
+    },
+    {
+      "feature": "injury_claim",
+      "importance": 0.0585,
+      "percentage": 5.9
+    },
+    {
+      "feature": "days open",
+      "importance": 0.0532,
+      "percentage": 5.3
+    },
+    {
+      "feature": "total_claim",
+      "importance": 0.0412,
+      "percentage": 4.1
+    },
+    {
+      "feature": "vehicle_price",
+      "importance": 0.0401,
+      "percentage": 4.0
+    },
+    {
+      "feature": "injury_to_total_ratio",
+      "importance": 0.0389,
+      "percentage": 3.9
+    },
+    {
+      "feature": "safety_rating",
+      "importance": 0.0342,
+      "percentage": 3.4
+    },
+    {
+      "feature": "age_of_driver",
+      "importance": 0.0284,
+      "percentage": 2.8
+    },
+    {
+      "feature": "claim_to_price_ratio",
+      "importance": 0.0281,
+      "percentage": 2.8
+    },
+    {
+      "feature": "liab_prct",
+      "importance": 0.0255,
+      "percentage": 2.6
+    }
+  ]
+}
