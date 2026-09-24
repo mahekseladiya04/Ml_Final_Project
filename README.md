@@ -99,4 +99,18 @@ npm.cmd run dev
 
 ### 3. Open in Browser
 Visit **`http://localhost:5173`** in your browser.
-"# Ml_Final_Project" 
+
+---
+
+## 🌐 Live Production Deployment
+
+- **Backend (Render):** [https://ml-final-project-o5ez.onrender.com](https://ml-final-project-o5ez.onrender.com)
+  - Health check: `https://ml-final-project-o5ez.onrender.com/api/health`
+  - Model info: `https://ml-final-project-o5ez.onrender.com/api/model-info`
+  - EDA stats: `https://ml-final-project-o5ez.onrender.com/api/eda-stats`
+  - Fraud prediction: `POST https://ml-final-project-o5ez.onrender.com/api/predict`
+
+- **Frontend (Vercel):**
+  - Configured with `VITE_API_URL=https://ml-final-project-o5ez.onrender.com`
+  - Includes `vercel.json` for seamless Vite SPA routing and zero-config deployment.
+

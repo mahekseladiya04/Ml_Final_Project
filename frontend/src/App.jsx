@@ -7,6 +7,9 @@ import {
 } from 'lucide-react';
 import './App.css';
 
+// Live backend API URL (Supports Render, Vercel, and local development)
+const API_BASE_URL = (import.meta.env.VITE_API_URL || 'https://ml-final-project-o5ez.onrender.com').replace(/\/+$/, '');
+
 // Default Model Metadata matching verified training pipeline
 const DEFAULT_MODEL_METADATA = {
   best_model: "Gradient Boosting",
@@ -125,21 +128,21 @@ export default function App() {
 
   // Fetch live backend info on mount
   useEffect(() => {
-    fetch('/api/health')
+    fetch(`${API_BASE_URL}/api/health`)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (data && data.status === 'healthy') setBackendOnline(true);
       })
       .catch(() => setBackendOnline(false));
 
-    fetch('/api/model-info')
+    fetch(`${API_BASE_URL}/api/model-info`)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (data && data.best_model) setModelInfo(data);
       })
       .catch(() => console.log('Using default model metadata'));
 
-    fetch('/api/eda-stats')
+    fetch(`${API_BASE_URL}/api/eda-stats`)
       .then(res => res.ok ? res.json() : null)
       .then(data => {
         if (data && (data.total_records || data.final_records)) setEdaStats(data);
@@ -160,7 +163,7 @@ export default function App() {
   const handlePredict = async (payloadToUse = formData) => {
     setIsLoadingPredict(true);
     try {
-      const response = await fetch('/api/predict', {
+      const response = await fetch(`${API_BASE_URL}/api/predict`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payloadToUse)
@@ -407,9 +410,9 @@ ${predictionResult.risk_factors.map(f => ` - ${f}`).join('\n')}`;
               {theme === 'dark' ? <Sun size={17} /> : <Moon size={17} />}
             </button>
 
-            <div className="status-pill">
+            <div className="status-pill" title={`Connected to backend: ${API_BASE_URL}`}>
               <span className="status-dot"></span>
-              {backendOnline ? 'Model API Ready' : 'Standalone Mode'}
+              {backendOnline ? 'Model API Live' : 'Standalone Mode'}
             </div>
 
             <button 
